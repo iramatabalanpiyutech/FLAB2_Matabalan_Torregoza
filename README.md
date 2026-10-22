@@ -1,4 +1,39 @@
 # FLAB2_Matabalan_Torregoza
+Machine Problem 1 — Zodiac Horoscope and Fortune Teller
+
+Application-Specific Open-Ended Questions
+1. Explain how your determine_zodiac procedure identifies the correct sign from the birth month and day. Describe at least two conditional comparisons.
+
+My determine_zodiac procedure identifies the zodiac sign by comparing the user's birth month and day with the zodiac date ranges. I used CMP and conditional jumps like JE, JL, and JGE to check the dates. For example, March 21 is classified as Aries, while April 20 is classified as Taurus. These comparisons help the program determine the correct zodiac sign.
+
+2. How does your program handle zodiac date ranges that cross two months, such as Capricorn? Explain the branching logic.
+
+My program handles zodiac signs that cover two months by checking the birth month and day separately. For example, Capricorn starts on December 22 and ends on January 19. I used conditional comparisons to check if the entered date falls within either part of that range. This allows the program to identify Capricorn correctly even though the dates belong to different months.
+
+3. Why did you divide input collection, date validation, zodiac identification, and horoscope display into separate procedures?
+
+I divided these tasks into separate procedures to make my program more organized and easier to understand. Each procedure has its own responsibility, such as get_user_info for collecting input and validate_birthdate for checking dates. This also makes debugging easier because I can identify which part of the program has an error. Using procedures also helps reduce repeated code.
+
+4. Describe how your program rejects invalid dates such as February 30 and an invalid month such as 13.
+
+My program uses the validate_birthdate procedure to check if the entered month and day are valid. I used CMP and conditional jumps to compare the input with the allowed values. For example, February 30 is rejected because February does not have 30 days, while month 13 is invalid because there are only 12 months. When the input is invalid, the program displays an error message and asks the user to try again.
+
+5. How does the program select a horoscope category after the user enters a menu choice? Identify the conditional jump instructions used.
+
+My program uses the display_menu procedure to show the available horoscope categories. After the user enters a choice, I used CMP and JE to check which option was selected. For example, choosing 1 displays the love horoscope, while choosing 2 displays the career horoscope. The show_horoscope procedure then displays the prediction based on the selected category.
+
+6. How did you implement the zodiac ASCII art? Explain how the correct design is selected and displayed.
+
+I implemented the zodiac ASCII art by storing text-based designs in the .data section. The display_zodiac_art procedure selects the design based on the user's zodiac sign. The program uses a printing procedure to display the ASCII characters in the terminal. This makes the program more creative and visually interesting.
+
+7. What happens when a user enters an invalid menu option? Explain how control returns to the menu.
+
+When the user enters an invalid menu option, my program displays an error message. I used CMP and conditional jumps to check if the selected number matches the available options. If the choice is invalid, the program uses a jump instruction to return to the menu loop. This allows the user to enter another choice without restarting the program.
+
+8. If you added a new horoscope category, which procedures and conditional branches would you modify? Explain why.
+
+If I added another horoscope category, I would modify the display_menu and show_horoscope procedures. I would add the new category to the menu and include another CMP and JE comparison to recognize the new choice. I would also add a new horoscope prediction in the .data section. These changes would allow the program to display the additional category without affecting the existing ones.
+
 Machine Problem 2 — Dungeon Adventure and Survival Game
 1. Explain how initialize_character assigns different health, attack, and potion values for Warrior, Mage, and Archer.
 
